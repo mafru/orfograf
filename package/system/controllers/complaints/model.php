@@ -21,18 +21,12 @@ class modelComplaints extends cmsModel{
         return $this->getCount('complaints');            
     }   
 
-    public function deleteComplaints($id = null){
+    public function deleteComplaints($id){
         
-        if (is_numeric($id)){		
-
+        if (is_numeric($id)){
             return $this->delete('complaints', $id); 
-			
 		} else{
-            
             return $this->db->query('TRUNCATE TABLE `{#}complaints`');
-            
-        }        		
-		         
-    }  
-    
+        }       
+    }      
 }	

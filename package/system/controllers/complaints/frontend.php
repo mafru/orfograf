@@ -1,4 +1,2 @@
-<?php class complaints extends cmsFrontend {
-  
-
-}
+<?php 
+class complaints extends cmsFrontend { }

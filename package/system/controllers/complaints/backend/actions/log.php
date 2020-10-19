@@ -5,9 +5,6 @@ class actionComplaintsLog extends cmsAction {
 
         $grid = $this->loadDataGrid('log');
 
-            return cmsTemplate::getInstance()->render('backend/log', array(
-                    
-                'grid' => $grid
-        ));
+        return cmsTemplate::getInstance()->render('backend/log', ['grid' => $grid]);
     }
 }

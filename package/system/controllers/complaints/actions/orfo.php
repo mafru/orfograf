@@ -9,18 +9,10 @@ class actionComplaintsOrfo extends cmsAction {
         $url     = $this->request->get('url');
         $author  = !cmsUser::isLogged() ? cmsUser::getIp() : cmsUser::get('nickname');  
         
-        $data = array('orfo'    => $orfo,
-                      'url'     => $url,
-                      'author'  => $author
-                    );
+        $data = ['orfo' => $orfo, 'url' => $url, 'author' => $author];
                        
         $form = $this->getForm('orfo');
     
-        return $this->cms_template->render('orfo', array(
-                'form'   => $form,
-                'data'   => $data,
-                'errors' => false
-             ));   
-    }
-   
+		return $this->cms_template->render('orfo', ['form' => $form, 'data' => $data, 'errors' => false]);   
+    }   
 }

@@ -9,7 +9,7 @@ class actionComplaintsLogAjax extends cmsAction {
                 
         $model = cmsCore::getModel($this->name);
         
-        $filter     = array();
+        $filter     = [];
         $filter_str = $this->request->get('filter', '');
 
         if ($filter_str) {
@@ -26,7 +26,5 @@ class actionComplaintsLogAjax extends cmsAction {
         cmsTemplate::getInstance()->renderGridRowsJSON($grid, $log, $total, $pages);
 
         $this->halt();
-
     }
-
 }

@@ -6,5 +6,4 @@ $this->addToolButton(array(
     'href'    => $this->href_to('delete', 'clear')
 ));
 
-$this->renderGrid($this->href_to('log_ajax'), $grid); ?>
-
+$this->renderGrid($this->href_to('log_ajax'), $grid); 

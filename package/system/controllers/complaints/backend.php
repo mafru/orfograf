@@ -1,21 +1,19 @@
 <?php
 class backendComplaints extends cmsBackend{  
     
-    public $useDefaultOptionsAction = true;
+	public $useDefaultOptionsAction = true;
+    protected $useOptions           = true;
 
-    public function actionIndex(){ 
-        
+	public function actionIndex(){
         $this->redirectToAction('log');
-        
     }
     
     public function getBackendMenu(){
-        return array(
-            array(
+        return [
+            [
                 'title' => LANG_OPTIONS,
-                'url' => href_to($this->root_url, 'options')
-            ),            
-        );
+                'url'   => href_to($this->root_url, 'options')
+            ]            
+        ];
     }
-
 }

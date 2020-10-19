@@ -3,41 +3,34 @@ class formComplaintsOrfo extends cmsForm {
     
     public function init() {
 
-        return array(
+        return [
             
-            array( 'type' => 'fieldset', 
+            ['type' => 'fieldset', 
                    'title' => LANG_COMPLAINTS_ORFO_TITLE, 
-                   'childs' => array(
+                   'childs' => [
             
-                new fieldText('comment', array(
-                        'rules' => array(
-                            array('max_length', 300)
-                            ),
-                        'options'=>array('size' => 5)
-                        )
-                    ),
+                new fieldText('comment', [
+                        'rules' => [['max_length', 300]],
+                        'options'=> ['size' => 5]
+                        ]
+                ),
                     
-                new fieldHidden('url', array(
+                new fieldHidden('url', [
                         'title' => LANG_COMPLAINTS_ORFO_TITLE,
-                        'rules' => array(
-                             array('required'))
-                        )
-                    ),
+                        'rules' => [['required']]
+                        ]
+                ),
                 
-                new fieldHidden('author', array(
-                        'title' => LANG_COMPLAINTS_ORFO_TITLE,                       
-                        )
-                    ),    
-                new fieldHidden('orfo', array(
+                new fieldHidden('author', ['title' => LANG_COMPLAINTS_ORFO_TITLE]),  
+					   
+                new fieldHidden('orfo', [
                         'title' => LANG_COMPLAINTS_ORFO_ERROR, 
-                        'rules' => array(
-                            array('required'), 
-                            array('max_length', 300)
-                            ))
-                    )
-            
+                        'rules' => [['required'], ['max_length', 300]]
+					]
                 )
-            )
-        );
+            
+                ]
+            ]
+        ];
     }
 }

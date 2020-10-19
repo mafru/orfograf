@@ -7,7 +7,8 @@ class actionComplaintsAddAjax extends cmsAction {
 	  
         $orfo    = $this->request->get('orfo');
         $url     = $this->request->get('url');
-        $comment = $this->request->get('comment', false);   
+        $comment = $this->request->get('comment', false);  
+		
         $author  = !cmsUser::isLogged() ?  cmsUser::getIp() : cmsUser::get('nickname');
         
         $form = $this->getForm('orfo'); 
@@ -18,12 +19,12 @@ class actionComplaintsAddAjax extends cmsAction {
 
         if (!$errors){
             
-            $data = array('orfo'     => $orfo,
-                          'url'      => $url,
-                          'author'   => $author,
-                          'comment'  => $comment,
-                          'date'     => date('Y-m-d H:i:s')
-                        );  
+            $data = ['orfo'    => $orfo,
+					'url'      => $url,
+					'author'   => $author,
+					'comment'  => $comment,
+					'date'     => date('Y-m-d H:i:s')
+                        ];  
 
             $this->model->addComplaints($data);
             
@@ -31,20 +32,19 @@ class actionComplaintsAddAjax extends cmsAction {
             
             $messenger->addRecipient($option['unotice'])
                       ->ignoreNotifyOptions()
-                      ->sendNoticePM(array(
+                      ->sendNoticePM([
                             'content' => sprintf(LANG_COMPLAINTS_ADD_NOTICE, $data['url'], $data['orfo']),
-                            'options' => array('is_closeable' => true),
-            ));                      
-            $this->cms_template->renderJSON(array(
+                            'options' => ['is_closeable' => true],
+            ]);   
+			
+            $this->cms_template->renderJSON([
                 'errors'   => false,
                 'callback' => 'complaintsAdded'
-            ));
-
+            ]);
         }else{
-            $this->cms_template->renderJSON(array(
+            $this->cms_template->renderJSON([
                 'errors' => $errors
-            ));
+            ]);
         }
     }
-
 }
