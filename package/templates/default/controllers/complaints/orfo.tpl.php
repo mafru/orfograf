@@ -1,12 +1,12 @@
 <?php $this->addCSSFromContext($this->getTplFilePath('controllers/complaints/style.css', false)); ?>
 
 <div id="complaints">
-	<?php if(!empty($data['orfo'])){ 
-		ob_start(); ?>           
-			<div class="text_error">
-				<span style="font-weight: bold;"><?php echo LANG_COMPLAINTS_ORFO_ERROR;?></span><br/>
-					<?php echo $data['orfo'];?>
-			</div>   
+        <?php if(!empty($data['orfo'])){ 
+            ob_start(); ?>           
+                <div class="text_error" style="color: #a4a4a4;">
+                    <span style="font-weight: bold;"><?php echo LANG_COMPLAINTS_ORFO_ERROR;?></span><br/>
+                        <?php echo $data['orfo'];?>
+                </div>   
 				
 <?php $prepend_html = ob_get_clean(); 
  }  

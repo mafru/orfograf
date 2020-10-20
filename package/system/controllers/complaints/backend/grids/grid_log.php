@@ -3,7 +3,7 @@ function grid_log($controller){
 
     $options = [
         'order_by'      => 'id',
-        'order_to'      => 'asc',
+        'order_to'      => 'desc',
         'is_sortable'   => false,
         'is_pagination' => true,        
         'show_id'       => false,

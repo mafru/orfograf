@@ -58,7 +58,7 @@ function mis_get_sel_context(sel) {
   context_first = context.substring(0, selection_start);
   context_second = context.substring(selection_start, selection_end);
   context_third = context.substring(selection_end, context.length);
-  context = context_first + '<strong>' + context_second + '</strong>' + context_third;
+  context = context_first + '<b>' + context_second + '</b>' + context_third;
 
   context_start = selection_start - 50;
   if (context_start < 0) {

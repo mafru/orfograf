@@ -6,25 +6,23 @@ class formComplaintsOrfo extends cmsForm {
         return [
             
             ['type' => 'fieldset', 
-                   'title' => LANG_COMPLAINTS_ORFO_TITLE, 
                    'childs' => [
             
                 new fieldText('comment', [
                         'rules' => [['max_length', 300]],
-                        'options'=> ['size' => 5]
+                        'options'=> ['size' => 3, 'max_length' => 300, 'show_symbol_count' => true],
+						'attributes' => array('placeholder' => LANG_COMPLAINTS_ORFO_TITLE)
                         ]
                 ),
                     
-                new fieldHidden('url', [
-                        'title' => LANG_COMPLAINTS_ORFO_TITLE,
+                new fieldHidden('url', [                    
                         'rules' => [['required']]
                         ]
                 ),
                 
-                new fieldHidden('author', ['title' => LANG_COMPLAINTS_ORFO_TITLE]),  
+                new fieldHidden('author', []),  
 					   
-                new fieldHidden('orfo', [
-                        'title' => LANG_COMPLAINTS_ORFO_ERROR, 
+                new fieldHidden('orfo', [                        
                         'rules' => [['required'], ['max_length', 300]]
 					]
                 )

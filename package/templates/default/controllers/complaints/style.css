@@ -1,8 +1,6 @@
 #complaints {min-width: 400px; overflow: hidden; overflow-y: auto; height: 100%;}
 #complaints form.modal{margin: 10px;}
-#complaints textarea{height: 100px;}
 #complaints .buttons{text-align: center;}
-#complaints .text_error{color:#a4a4a4; padding: 10px 15px 15px 15px;}
-#complaints .text_error strong{color:red;}
+#complaints .text_error b{color:red;}
 #complaints .text_error span{color:#000;}
-#complaints fieldset{border: none; margin-bottom: 0px;}
+#complaints fieldset{padding: 0px; margin-bottom: 0px;}
