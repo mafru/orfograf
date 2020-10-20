@@ -1,8 +1,8 @@
 <?php 
 $this->addToolButton(array(
     'class'   => 'delete',
-    'title'   => LANG_COMPLAINTS_ADMIN_CLEAR,
-    'confirm' => LANG_COMPLAINTS_ADMIN_CLEAR_CONFIRM,
+    'title'   => LANG_COMPLAINTS_CLEAR,
+    'confirm' => LANG_COMPLAINTS_CLEAR_CONFIRM,
     'href'    => $this->href_to('delete', 'clear')
 ));
 

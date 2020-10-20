@@ -11,7 +11,7 @@ class formComplaintsOrfo extends cmsForm {
                 new fieldText('comment', [
                         'rules' => [['max_length', 300]],
                         'options'=> ['size' => 3, 'max_length' => 300, 'show_symbol_count' => true],
-						'attributes' => array('placeholder' => LANG_COMPLAINTS_ORFO_TITLE)
+						'attributes' => ['placeholder' => LANG_COMPLAINTS_ORFO_TITLE]
                         ]
                 ),
                     
